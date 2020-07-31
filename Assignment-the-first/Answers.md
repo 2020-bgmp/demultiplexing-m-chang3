@@ -63,9 +63,16 @@ plt.savefig("{}QualScoreDist.png".format(nam))
 
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here.
+Read1
 ![](https://github.com/2020-bgmp/demultiplexing-m-chang3/blob/master/Read1QualScoreDist.png)
+
+Read2
 ![](https://github.com/2020-bgmp/demultiplexing-m-chang3/blob/master/Read2QualScoreDist.png)
+
+Read3
 ![](https://github.com/2020-bgmp/demultiplexing-m-chang3/blob/master/Read3QualScoreDist.png)
+
+Read4
 ![](https://github.com/2020-bgmp/demultiplexing-m-chang3/blob/master/Read4QualScoreDist.png)
     
 ## Part 2

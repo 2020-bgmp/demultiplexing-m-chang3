@@ -126,7 +126,6 @@ def categorize_reads(read1, read2, read3, read4):
                 If index in dictionary, add 1 to value
                 If index not in dictionary, add to dictionary as key, value = 1
                 Write updated records for reads 1 and 4 to two of 48 separate files; Write to a file name called (R1 or R4, index)
-
             If read 2 and 3 don't match AND don't have any N's in the sequence:
                 Make a dictionary to hold indices as keys and ints as values. Permutations will be recorded (not combinations)
                 Add read 2 and read 3 sequences to read 1 and read 4 headers with add_indices() function.

@@ -63,6 +63,11 @@ plt.savefig("{}QualScoreDist.png".format(nam))
 
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here.
+    2. A good cutoff value for quality scores is Q20. This indicates that there's a 99% likelihood of a correct base calling. According to the averaged distribution graphs, most sequences should be above that value.
+    3.  zcat 1294_S1_L008_R3_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l = 3328051
+        zcat 1294_S1_L008_R2_001.fastq.gz | sed -n '2~4p' | grep "N" | wc -l = 3976613
+        Total = 7,304,664
+
 Read1
 ![](https://github.com/2020-bgmp/demultiplexing-m-chang3/blob/master/Read1QualScoreDist.png)
 

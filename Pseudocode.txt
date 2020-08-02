@@ -1,0 +1,48 @@
+PART 2 PSEUDOCODE:
+
+def rev_comp(sequence):
+    '''Calculate the reverse complement of a sequence'''
+    Loop through sequence. Create a list to hold complement sequence. Create a list to hold the reverse complement sequence.
+    If letter in sequence is A, add T to list. If T, add A. If C, add G. If G, add C.
+    Reverse the sequence with index slicing: reverselist[::-1] = revcomp
+    Return revcomp
+
+def add_indices(read1[0], read2[1], read3[1], read4[0]):
+    '''Update header information for biological sequences to hold index information from BOTH indices'''
+    Update header information:
+        read1[0] is the header line. Set it equal to the concatenation of read1[0] and read2[1] and read3[1].
+        read4[0] is the header line. Set it equal to the concatenation of read4[0] and read2[1] and read3[1].
+
+def categorize_reads(read1, read2, read3, read4):
+    '''Split reads into categories based on if indices match or don't match or are unknown'''
+    Create a line counter to loop through each file.
+    Create four separate 1D numpy arrays of length 4 containing strings.
+    Take the first 4 lines from each file to get a single full record.
+        Open each file. Write 4 lines at a time to a separate numpy 1D array of length 4 for each file.
+    For each record in each numpy array:
+        Compare sequences from each record (line 2 in each record).
+            Reference sequences by index and array (i.e. read1[1])
+        Call function rev_comp(read3). Update array for read 3 sequence to the reverse complement.
+        Remove all sequences with any quality scores < 20 for indices only:
+            If ANY N's OR any quality scores lower than 20 in read 2 or read 3
+                Add read 2 and read 3 sequences to read 1 and read 4 headers with add_indices() function.
+                Update header information for reads 1 and 4 numpy arrays to new headers.
+                Write updated records for reads 1 and 4 to two separate files called UnknownForward and UnknownReverse (with index info in header)
+        Compare index sequences that are known:
+            If read 2 and read 3 sequences match:
+                Make a dictionary to hold indices as keys and ints as values (starting at 0)
+                Add read2 and read 3 sequences to read 1 and read 4 headers with add_indices() function.
+                Update header information for reads 1 and 4 numpy arrays to new headers.
+                If index in dictionary, add 1 to value
+                If index not in dictionary, add to dictionary as key, value = 1
+                Write updated records for reads 1 and 4 to two of 48 separate files; Write to a file name called (R1 or R4, index)
+            If read 2 and 3 don't match AND don't have any N's in the sequence:
+                Make a dictionary to hold indices as keys and ints as values. Permutations will be recorded (not combinations)
+                Add read 2 and read 3 sequences to read 1 and read 4 headers with add_indices() function.
+                Update header information for reads 1 and 4 numpy arrays to new headers.
+                If index not in dictionary (in R2-R3 order), add index to dictionary, value = 1
+                If index in dictionary, add 1 to value.
+                Write updated records for reads 1 and 4 to two separate files called UnmatchedForward and UnmatchedReverse (with index info in header)
+            
+        Clear numpy arrays holding record from each file.
+        Return 52 files

@@ -12,9 +12,7 @@ Output Files are categorized as follows:
   
   Output Files by Index: Files are named with the information associated with the sequence from indexes.txt.
     
-    
     Format: (sample)_(group)_(treatment)_(index)___REVERSE_S1_L008_R4_001.fastq.gz
-    
     
     Example: 10_2G_both_C4___FORWARD_S1_L008_R1_001.fastq.gz is from Sample 10, Group 2G, Treatment both, and index C4.
     

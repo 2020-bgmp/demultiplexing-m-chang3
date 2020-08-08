@@ -1,3 +1,9 @@
+I have two sets of results listed in /home/mchang3/bgmp/bioinformatics/Bi622:
+One set of files is located in the directory "alternatefile". This set of files is coded with the average phred score of R2 and R3 indexes above 30.
+The other set of files is located in "coveragecutoff20". This set of files is coded to put all files with any index phred scores below 20 in R2 or R3 sorted to unknown.
+I've uploaded both Stats files (as labeled). Overall, I prefer the Average Phred score method since it sorts fewer to Unknown and provides a high degree of confidence.
+
+
 Output Files are categorized as follows:
 
 UNMATCHED_OUTPUT_FILES contains:
